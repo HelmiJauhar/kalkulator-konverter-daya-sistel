@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kalkulator Sistel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> 
+</head>
+<body>
+    <script type="text/javascript">
+        function setfocus() {
+         document.calcform.mw.focus();
+        }
+        function Round(x,res) 
+        {
+          y = parseFloat(x);
+          res = Math.pow(10,res);
+          y = Math.round(y*res)/res;
+          return y;
+        }
+        function Convert_mW() 
+        {
+         mw = document.calcform.mw.value;
+         if( mw=="" )
+          return;
+         mw = parseFloat(mw);
+         document.calcform.w.value   = Round(mw/1000, 6);
+         document.calcform.dbm.value = Round(10*Math.log(mw)*Math.LOG10E, 6);
+         document.calcform.dbw.value = Round(10*Math.log(mw)*Math.LOG10E-30, 6);
+        }
+        function Convert_W() 
+        {
+         w = document.calcform.w.value;
+         if( w=="" )
+          return;
+         w = parseFloat(w);
+         document.calcform.mw.value  = Round(w*1000, 6);
+         document.calcform.dbm.value = Round(10*Math.log(w*1000)*Math.LOG10E, 6);
+         document.calcform.dbw.value = Round(10*Math.log(w*1000)*Math.LOG10E-30, 6);
+        }
+        function Convert_dBm() 
+        {
+         dbm = document.calcform.dbm.value;
+         if( dbm=="" )
+          return;
+         dbm = parseFloat(dbm);
+         document.calcform.mw.value  = Round(Math.pow(10,(dbm/10)), 6);
+         document.calcform.w.value   = Round(Math.pow(10,((dbm-30)/10)), 6);
+         document.calcform.dbw.value = Round(dbm-30, 6);
+        }
+        function Convert_dBW() 
+        {
+         dbw = document.calcform.dbw.value;
+         if( dbw=="" )
+          return;
+         dbw = parseFloat(dbw);
+         document.calcform.mw.value  = Round(Math.pow(10,((dbw+30)/10)), 6);
+         document.calcform.w.value   = Round(Math.pow(10,(dbw/10)), 6);
+         document.calcform.dbm.value = Round(dbw+30, 6);
+        }
+        </script>
+       <br />
+       <div class="header">Kalkulator Daya</div>
+       <form name="calcform">
+       <table class="calc2">
+          <tbody>
+       <tr>
+            <td>Masukkan mW = </td>
+         <td class="math"><input class="theInput" type="text" name="mw"></td>
+            <td class="mathsymbol">mW</td>
+            <td class="mathsymbol"><input id="theButton" class="btn" onclick="Convert_mW()" type="button" value="Ubah" /></td>
+          </tr>
+       <tr>
+            <td>Masukkan W = </td>
+         <td class="math"><input class="theInput" type="text" name="w"></td>
+            <td class="mathsymbol">W</td>
+            <td class="mathsymbol"><input id="theButton" class="btn" onclick="Convert_W()" type="button" value="Ubah" /></td>
+          </tr>
+       <tr>
+            <td>Masukkan dBm = </td>
+            <td class="math"><input class="theInput" type="text" name="dbm"></td>
+            <td class="mathsymbol">dBm</td>
+            <td class="mathsymbol"><input id="theButton" class="btn" onclick="Convert_dBm()" type="button" value="Ubah" /></td>
+          </tr>
+       <tr>
+            <td>Masukkan dBW = </td>
+            <td class="math"><input class="theInput" type="text" name="dbw"></td>
+            <td class="mathsymbol">dBW</td>
+            <td class="mathsymbol"><input id="theButton" class="btn" onclick="Convert_dBW()" type="button" value="Ubah" /></td>
+          </tr>
+       <tr>
+           <td></td>
+           <td class="mathsymbol"></td>
+            <td class="mathsymbol"></td>
+            <td class="mathsymbol"><input id="theButton" class="btn" type="reset" value="Reset" /></td>
+          </tr>
+       </tbody></table>
+       </form>
+       <footer>Production By : XIRPL5 / 17</footer>
+</body>
+</html>

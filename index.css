@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #adbbbb;
+}
+
+.header{
+    text-align: center;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 40px;
+    font-family: 'Bitter', serif;
+    position: relative;
+    bottom: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.calc2{
+    background-color: white;
+    padding: 40px;
+    margin-left: 32%;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.theInput{
+    border:none;
+    border-bottom:2px solid #1abc9c;
+    outline:none;
+    padding:5px;
+    -webkit-transition: all 700ms ease-out;
+  -moz-transition: all 700ms ease-out;
+  -ms-transition: all 700ms ease-out;
+  -o-transition: all 700ms ease-out;
+  transition: all 700ms ease-out;
+     width:50%;
+  }
+
+  .theInput:focus{
+    background:#ecf0f1;
+    width:calc(100% - 10%);
+  -webkit-transition: all 700ms ease-in;
+  -moz-transition: all 700ms ease-in;
+  -ms-transition: all 700ms ease-in;
+  -o-transition: all 700ms ease-in;
+  transition: all 700ms ease-in;
+    
+  }
+
+  #theButton {
+    color:#454545;
+    background:transparent;
+    border-width:2px;
+    border-style: solid;
+    border-color: #454545;
+    position:relative;
+    margin:1em;
+    display:inline-block;
+    padding:0.5em 1em;
+    transition:all 0.3s ease-in-out;
+    text-align:center;
+    font-family:comfortaa;
+    font-weight:bold
+}
+    #theButton:before, #theButton:after {
+    content:'';
+    display:block;
+    position:absolute;
+    border-color:#454545;
+    box-sizing:border-box;
+    border-style:solid;
+    width:1em;
+    height:1em;
+    transition:all 0.3s ease-in-out
+}
+    #theButton:before {
+    top:-6px;
+    left:-6px;
+    border-width:2px 0 0 2px;
+    z-index:5;
+}
+    #theButton:after {
+    bottom:-6px;
+    right:-6px;
+    border-width:0 2px 2px 0;
+}
+    #theButton:hover:before, #theButton:hover:after {
+    width:calc(100% + 12px);
+    height:calc(100% + 12px);
+    border-color:lightgreen;
+}
+    #theButton:hover {
+    color:#353535;
+    background-color:lightgreen;
+    border-color:lightgreen;
+}
+
+    footer{
+        background-color: #e74c3c;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Bree Serif', serif;
+        color: white;
+        margin-top: 101px;
+        padding: 10px;
+    }
